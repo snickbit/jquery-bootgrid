@@ -472,7 +472,7 @@
                 {
                     var pos = i + startWith;
                     renderPaginationItem.call(this, pagination, pos, pos, "page-" + pos)
-                        ._bgEnableAria()._bgSelectAria(pos === current);
+                        ._bgEnableAria()._bgSelectAria(pos == current);
                 }
 
                 if (count === 0)
@@ -508,8 +508,8 @@
                     {
                         var commandList = {
                             first: 1,
-                            prev: that.current - 1,
-                            next: that.current + 1,
+                            prev: +that.current - 1,
+                            next: +that.current + 1,
                             last: that.totalPages
                         };
                         var command = $this.attr("href").substr(1);
